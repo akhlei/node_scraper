@@ -11,13 +11,13 @@ request.get(url, function(error, response, html){
     var finalArray = [];
 
     $('tr').filter(function(){
-      var permit = $(this).children().first().children().text();
-      var extension = $(this).children().last().children().attr("href");
+      permit = $(this).children().first().children().text();
+      extension = $(this).children().last().children().attr("href");
       suffix = $(this).children().last().children().text().split('.')[1];
 
       var csvString = permit + "," + (url + extension) + "," + ("." + suffix);
       finalArray.push(csvString);
-    }
+    });
 
     fs.writeFile('./scraped.csv', finalArray.join("\n"), 'utf8', function(err){
       if (err){

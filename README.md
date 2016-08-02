@@ -8,6 +8,8 @@ and writes a CSV file with the following 3 categories:
 
 permissions,absolute URL,file extension
 
+and writes an entry to the CSV for each file on the site.  
+
 
 
 
